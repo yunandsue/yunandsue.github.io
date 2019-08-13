@@ -640,9 +640,32 @@ div.groom {margin: 12px auto 30px;}
         </section>
     </div>
 </div>
-<audio controls autoplay loop>
-     <source src="misty_dont_cry.mp3" type="audio/mpeg"/ controller="false">
-</audio>	
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+	$("#myvideo").hover(function() {
+  $(this).prop("controls", true);
+}, function() {
+  $(this).prop("controls", false);
+
+});
+
+// if always hide
+
+$("#myvideo2").click(function() {
+ if( this.paused)
+   this.play();
+  else
+    this.pause();
+});
+</script>	
+<video id="myvideo" width="200"   >
+<source src="misty_dont_cry.mp3" type="audio/mpeg">
+</video>
+<br/>All time hide controls:<br/>
+<video id="myvideo2" autoplay  width="200" >
+  <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4">	
+	</video>
 <script src="js/libs/owl.carousel.min.js"></script>
 <script>
     $(window).load(function () {
@@ -658,7 +681,7 @@ div.groom {margin: 12px auto 30px;}
             autoplaySpeed: 1000
         });
     });
-    </script>
+    </script>		
 <canvas id="__gesture_canvas__" width="0" height="0" style="z-index: 100000000; position: fixed; background: transparent !important; top: 0px; left: 0px;"></canvas>
 <span id="__gesture_preview__" style="z-index: 100000001; position: absolute; background: rgba(255, 255, 225, 0.85); margin: 0px; border: 1px solid black; white-space: nowrap; display: none;"></span>
 </body>
